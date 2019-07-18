@@ -1,14 +1,2 @@
 # IQA
-IQA
-sdasd
-
-as
-d
-asd
-as
-d
-asd
-a
-d
-asd
-a
+Image features 图像常用特征
