@@ -1,5 +1,11 @@
 HOG特征：
-方向梯度直方图（Histogram of OrientedGradient,HOG）特征是一种在计算机视觉和图像处理中用来进行物体检测的特征描述子。 \
+方向梯度直方图（Histogram of OrientedGradient,HOG）特征是一种在计算机视觉和图像处理中用来进行物体检测的特征描述子。 
 它通过计算和统计图像局部区域的梯度方向直方图来构成特征。Hog特征结合SVM分类器已经被广泛应用于图像识别中，尤其在行人检测中获得了极大的成功。
-
-
+HOG特征提取算法的实现过程：
+1) 灰度化
+2) 归一化
+3) 计算图像每个像素的梯度（包括大小和方向）
+4) 将图像划分成小cells
+5) 统计每个cell的梯度直方图
+6) 将每几个cell组成一个block（例如3*3个cell/block），一个block内所有cell的特征descriptor串联起来便得到该block的HOG特征descriptor。
+7) 将图像image内的所有block的HOG特征descriptor串联起来就可以得到该image（你要检测的目标）的HOG特征descriptor了。这个就是最终的可供分类的特征向量
